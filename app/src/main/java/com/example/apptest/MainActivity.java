@@ -25,15 +25,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        EditText campoUsusario = findViewById(R.id.editUsuario);
-        Button botaoEnter = findViewById(R.id.btnEntrar);
+        EditText etInputName = findViewById(R.id.etInputName);
+        Button btnValidate = findViewById(R.id.btnValidate);
 
-        botaoEnter.setOnClickListener(new View.OnClickListener() {
+        btnValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nome = campoUsusario.getText().toString();
-                Toast.makeText(MainActivity.this, "Bem-Vindo" + nome, Toast.LENGTH_SHORT).show();
+                String name = etInputName.getText().toString().trim();
+                if (name.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please, fill in the field", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Hello " + name, Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+
     }
 }
