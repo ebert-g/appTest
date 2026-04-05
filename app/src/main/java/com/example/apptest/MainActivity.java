@@ -26,19 +26,5 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-//        EditText etEntrada = findViewById(R.id.etEntrada);
-//        Button btnExibir = findViewById(R.id.btnExibir);
-//        TextView tvResultado = findViewById(R.id.tvResultado);
-//
-//        btnExibir.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String textDig = etEntrada.getText().toString();
-//                tvResultado.setText(textDig);
-//            }
-//        });
-
-
-
     }
 }
