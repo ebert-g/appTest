@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -25,14 +26,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btnCliqueAqui = findViewById(R.id.btnCliqueAqui);
+        EditText etEntrada = findViewById(R.id.etEntrada);
+        Button btnExibir = findViewById(R.id.btnExibir);
+        TextView tvResultado = findViewById(R.id.tvResultado);
 
-        btnCliqueAqui.setOnClickListener(new View.OnClickListener() {
+        btnExibir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Olá! Você clicou no botão.", Toast.LENGTH_SHORT).show();
+                String textDig = etEntrada.getText().toString();
+                tvResultado.setText(textDig);
             }
         });
+
+
 
     }
 }
