@@ -6,26 +6,44 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/etEntrada"
+    <Button
+        android:id="@+id/btnVertical1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite Algo"
-        android:inputType="text" />
-
+        android:text="Vertical 1" />
 
     <Button
-        android:id="@+id/btnExibir"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnVertical2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Exibir Texto" />
+        android:text="Vertical 2" />
 
-    <TextView
-        android:id="@+id/tvResultado"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnVertical3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Resultado aqui"
-        android:textSize="40dp" />
+        android:text="Vertical 3" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnHorizontal1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Horizontal 1" />
+
+        <Button
+            android:id="@+id/btnHorizontal2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Horizontal 2" />
+    </LinearLayout>
 
 
 </LinearLayout>
