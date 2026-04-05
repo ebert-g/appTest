@@ -25,15 +25,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        EditText campoUsusario = findViewById(R.id.editUsuario);
-        Button botaoEnter = findViewById(R.id.btnEntrar);
+        Button btnCliqueAqui = findViewById(R.id.btnCliqueAqui);
 
-        botaoEnter.setOnClickListener(new View.OnClickListener() {
+        btnCliqueAqui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nome = campoUsusario.getText().toString();
-                Toast.makeText(MainActivity.this, "Bem-Vindo" + nome, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Olá! Você clicou no botão.", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
