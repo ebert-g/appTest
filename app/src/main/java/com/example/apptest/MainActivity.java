@@ -1,9 +1,11 @@
 package com.example.apptest;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -25,18 +27,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        EditText etInputName = findViewById(R.id.etInputName);
-        Button btnValidate = findViewById(R.id.btnValidate);
+        TextView tvChange = findViewById(R.id.tvChange);
+        Button btnChange = findViewById(R.id.btnChange);
 
-        btnValidate.setOnClickListener(new View.OnClickListener() {
+        btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = etInputName.getText().toString().trim();
-                if (name.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please, fill in the field", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Hello " + name, Toast.LENGTH_SHORT).show();
-                }
+                tvChange.setText("Mudou");
+                tvChange.setTextColor(Color.RED);
             }
         });
 
