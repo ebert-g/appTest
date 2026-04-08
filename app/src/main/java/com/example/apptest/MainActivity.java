@@ -27,17 +27,24 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        TextView tvChange = findViewById(R.id.tvChange);
-        Button btnChange = findViewById(R.id.btnChange);
+        Button btnFemale = findViewById(R.id.bntFemale);
+        Button btnMale = findViewById(R.id.bntMale);
+        TextView tvGenero = findViewById(R.id.tvGenero);
 
-        btnChange.setOnClickListener(new View.OnClickListener() {
+        btnFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvChange.setText("Mudou");
-                tvChange.setTextColor(Color.RED);
+                tvGenero.setTextColor(Color.MAGENTA);
+                tvGenero.setText("FEMALE");
             }
         });
-
+        btnMale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvGenero.setTextColor(Color.BLUE);
+                tvGenero.setText("MALE");
+            }
+        });
 
     }
 }

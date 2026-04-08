@@ -6,19 +6,38 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bntFemale"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:text="Female"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/bntMale"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:text="Male"
+            android:textSize="20dp" />
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/tvChange"
+        android:id="@+id/tvGenero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="O texto vai mudar aqui"
+        android:layout_marginTop="50dp"
         android:textSize="40dp"
+
         />
-    <Button
-        android:id="@+id/btnChange"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Change"
-        android:textSize="25dp"
-        />
+
 
 </LinearLayout>
