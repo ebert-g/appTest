@@ -14,7 +14,16 @@
             android:id="@+id/etNameMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Type your name" />
+            android:hint="Type your name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edAgeMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type your age"
+            android:inputType="number" />
+
 
         <Button
             android:id="@+id/btnSendData"

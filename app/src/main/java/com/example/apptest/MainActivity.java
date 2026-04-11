@@ -26,13 +26,16 @@ public class MainActivity extends AppCompatActivity {
         });
         Button btnSendData = findViewById(R.id.btnSendData);
         EditText etNameMain = findViewById(R.id.etNameMain);
+        EditText etAgeMain = findViewById(R.id.edAgeMain);
 
         btnSendData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = etNameMain.getText().toString();
+                String age = etAgeMain.getText().toString();
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("USER_NAME", name);
+                intent.putExtra("USER_AGE", age);
                 startActivity(intent);
             }
         });
