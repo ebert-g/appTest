@@ -1,11 +1,9 @@
 package com.example.apptest;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -27,24 +25,18 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btnFemale = findViewById(R.id.bntFemale);
-        Button btnMale = findViewById(R.id.bntMale);
-        TextView tvGenero = findViewById(R.id.tvGenero);
+        Button btnLogin = findViewById(R.id.btnLogin);
+        EditText etEmail = findViewById(R.id.etEmail);
+        EditText etSenha = findViewById(R.id.etSenha);
 
-        btnFemale.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvGenero.setTextColor(Color.MAGENTA);
-                tvGenero.setText("FEMALE");
+                Toast.makeText(MainActivity.this, "Login ", Toast.LENGTH_SHORT).show();
+
             }
         });
-        btnMale.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvGenero.setTextColor(Color.BLUE);
-                tvGenero.setText("MALE");
-            }
-        });
+
 
     }
 }
