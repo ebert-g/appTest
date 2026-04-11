@@ -6,15 +6,21 @@
     android:padding="20dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etNameMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type your name" />
 
         <Button
-            android:id="@+id/btnGoToSecond"
+            android:id="@+id/btnSendData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to Second Screen" />
+            android:text="Send and Navigate" />
 
 
     </LinearLayout>
