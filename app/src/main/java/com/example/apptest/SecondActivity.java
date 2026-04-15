@@ -1,6 +1,8 @@
 package com.example.apptest;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,15 +26,20 @@ public class SecondActivity extends AppCompatActivity {
             return insets;
         });
 
-        TextView tvFullMessage = findViewById(R.id.tvFullMessage);
+        TextView tvName = findViewById(R.id.tvName);
+        TextView tvAge = findViewById(R.id.tvAge);
+
         Button btnBack = findViewById(R.id.btnBack);
 
         String name = getIntent().getStringExtra("USER_NAME");
         String age = getIntent().getStringExtra("USER_AGE");
 
         if (name != null && age != null) {
-            // Montando a mensagem conforme solicitado: "[nome] tem [idade] anos"
-            tvFullMessage.setText(name + " tem " + age + " anos");
+            tvName.setText("Name: " + name);
+            tvName.setTypeface(null, Typeface.BOLD);
+
+            tvAge.setText("Age: " + age);
+            tvAge.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24);
         }
 
         btnBack.setOnClickListener(new View.OnClickListener() {
