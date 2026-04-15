@@ -1,12 +1,16 @@
 package com.example.apptest;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -25,37 +29,28 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        EditText etNameForm = findViewById(R.id.etNameForm);
-        EditText etEmailForm = findViewById(R.id.etEmailForm);
-        EditText etPasswordForm = findViewById(R.id.etPasswordForm);
-        Button btnLoginForm = findViewById(R.id.btnLogin);
+        Button btnOpenCam = findViewById(R.id.btnOpenCam);
 
-        btnLoginForm.setOnClickListener(new View.OnClickListener() {
+        btnOpenCam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = etNameForm.getText().toString().trim();
-                String email = etEmailForm.getText().toString().trim();
-                String password = etPasswordForm.getText().toString().trim();
-                if (name.isEmpty()) {
-                    etNameForm.setError("Name is Required");
-
-                } else if (email.isEmpty()) {
-                    etEmailForm.setError("Email is Required");
-
-                } else if (password.isEmpty()) {
-                    etPasswordForm.setError("Password is Required");
-
-                }
-
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("NAME_FORM", name);
-                intent.putExtra("EMAIL_FORM", email);
-                startActivity(intent);
-
-
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, 100);
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 100 && resultCode == RESULT_OK) {
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+
+            ImageView ivPhoto = findViewById(R.id.ivPhoto);
+            ivPhoto.setImageBitmap(photo);
+        }
 
     }
 }
